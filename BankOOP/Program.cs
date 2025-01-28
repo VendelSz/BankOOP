@@ -27,6 +27,20 @@
 						int kezdoEgyenleg = Convert.ToInt32(Console.ReadLine());
 						bank.SzamlaLetrehoz(nev,kezdoEgyenleg);
 						break;
+					case 2:
+                        Console.Write("Add meg a számlaszámot: ");
+						string szamlaszamBefizet = Console.ReadLine();
+						var szamlaBefizet = bank.SzamlaKeres(szamlaszamBefizet);
+						if (szamlaBefizet != null)
+						{
+                            Console.Write("Add meg a befizetendő összeget: ");
+							int osszegBefizet = Convert.ToInt32(Console.ReadLine());
+							szamlaBefizet.Befizet(osszegBefizet);
+                        } else
+						{
+                            Console.WriteLine("Nincs ilyen számla.");
+                        }
+						break;
                 }
 			}
 			Console.ReadLine();
