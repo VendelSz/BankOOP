@@ -31,5 +31,21 @@ namespace BankOOP
 			}
 			return null;
 		}
+
+		public void OsszesSzamlaAdatok()
+		{
+			if (szamlak.Count == 0)
+			{
+				Console.WriteLine();
+			}
+			else
+			{
+                Console.WriteLine("Összes számla: 0");
+				foreach (var szamla in szamlak)
+				{
+					Console.WriteLine(szamla.GetSzamlaAdatok());
+				}
+            }
+        }
 	}
 }
